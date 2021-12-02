@@ -13,11 +13,6 @@ def getRotl(n,size=64):
 def getShift(n,size=64):
     return np.eye(size,k=n,dtype="uint8")
 
-def getI(n,size=128):
-    vec = np.zeros((1,size),"uint8")
-    vec[0][n] = 1
-    return vec
-
 def getTrans():
     tl = getRotl(24)^np.identity(64,dtype="uint8")^getShift(16)
     tr = np.identity(64,dtype="uint8")^getShift(16)
