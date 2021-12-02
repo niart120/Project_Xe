@@ -49,8 +49,7 @@ def gauss_jordan(mat,observed):
     #def square mat size
     n = r
     bitmat = [list2bitvec(mat[i]) for i in range(r)]
-    for b in bitmat:
-        print(bin(b)[2:].zfill(128))
+
     res = [d for d in observed]
     #forward elimination
     pivot = 0
@@ -70,16 +69,12 @@ def gauss_jordan(mat,observed):
                     res[j],res[pivot] = res[pivot],res[j]
         if isfound:
             pivot += 1
-    for b in bitmat:
-        print(bin(b)[2:].zfill(128))
     
     #backward assignment
     for i in range(1,n)[::-1]:
         check = 1<<(n-i-1)
         for j in range(i)[::-1]:
             if bitmat[j]&check==check:
-                #b = bitmat[j]
-                #print(bin(b)[2:].zfill(128))
                 bitmat[j] ^= bitmat[i]
                 res[j] ^= res[i]
 
