@@ -4,6 +4,8 @@ xoroshiro128+が連続して出力する128個の乱数列(64bit)の下位1bit�
 
 src/test.pyが逆算が成功しているproofになっています. たぶん色々書き換えれば逆算ツールになるはずです.
 
+このアルゴリズムの提案者は[pattirudon](https://github.com/pattirudon/xoroshiroseed-java)氏のもので, 私のオリジナルではありません.
+
 # Reference
 ### xoroshiro128+の状態遷移の逆算の考察
 https://hackmd.io/@yatsuna827/r1ez2-n3S
